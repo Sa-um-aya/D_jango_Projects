@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block body %}
+    <div class="container">
+        <form method="post">
+            {% csrf_token%}
+            <div class="mb-3">
+            <label for="">First Name🫥</label>
+            {{form.fname}}
+             </div>
+            <div class="mb-3">
+            <label for="">Last Name😁</label>
+            {{form.lname}}
+             </div>
+              <div class="mb-3">
+            <label for="">Email💌</label>
+            {{form.email}}
+             </div>
+            <div class="mb-3">
+            <label for="">Contact☎️</label>
+            {{form.contact}}
+             </div>
+              <div class="mb-3">
+           <button class="btn btn-primary">Submit🤔</button>
+             </div>
+        </form>
+
+    </div>
+{% endblock body %}

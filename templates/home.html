@@ -1,0 +1,73 @@
+<h1>❤️❤️❤️All Members , WELCOME BELOVED USER❤️❤️❤️</h1>
+
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+    <div class="container"><h1 class="text-center">ADD NEW MEMBERS☺️☺️</h1></div>
+    <div class="container">
+        <form action="" method="post">
+            {%csrf_token%}
+            <div class="mb-3">
+            <label for="" class="form-label">First Name🫥</label>
+            <input type="text" class="form-control" name="fname">
+            </div>
+            <div class="mb-3">
+            <label for="" class="form-label">Last Name👀</label>
+            <input type="text" class="form-control" name="lname">
+            </div>
+            <div class="mb-3">
+            <label for="" class="form-label">Email💌</label>
+            <input type="text" class="form-control" name="email">
+            </div>
+            <div class="mb-3">
+            <label for="" class="form-label">Contact☎️</label>
+            <input type="text" class="form-control" name="contact">
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary">Submit😁</button>
+            </div>
+        </form>
+    </div
+</div>
+
+<div class="container">
+    <div class="container">
+    <h2>Hello how's it going🫂👋</h2>
+    </div>
+    <div class="container">
+          <table class="table">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Contact </th>
+            <th col="action">Action😁</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in all %}
+            <tr>
+                <td>
+                    {{item.fname}}
+                </td>
+                <td>
+                    {{item.lname}}
+                </td>
+                <td>
+                    {{item.email}}
+                </td>
+                <td>{{item.contact}}
+                </td>
+                <td><a href="/update/{{item.id}}" class="btn btn-dark btn-sm" role="btn">Update❤️</a></td>
+                <td> <a href="/delete/{{item.id}}" class="btn btn-dark btn-sm" role="btn">Delete❤️</a></td>
+            </tr>
+
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+</div>
+
+  
+{% endblock body %}
