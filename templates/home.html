@@ -7,21 +7,26 @@
     <div class="container">
         <form action="" method="post">
             {%csrf_token%}
+            {{form.non_field_errors}}
             <div class="mb-3">
             <label for="" class="form-label">First Name🫥</label>
             <input type="text" class="form-control" name="fname">
+            <small class="text-danger">{{ form.fname.errors }}</small>
             </div>
             <div class="mb-3">
             <label for="" class="form-label">Last Name👀</label>
             <input type="text" class="form-control" name="lname">
+            <small class="text-danger">{{ form.lname.errors }}</small>
             </div>
             <div class="mb-3">
             <label for="" class="form-label">Email💌</label>
             <input type="text" class="form-control" name="email">
+            <small class="text-danger">{{ form.email.errors }}</small>
             </div>
             <div class="mb-3">
             <label for="" class="form-label">Contact☎️</label>
             <input type="text" class="form-control" name="contact">
+            <small class="text-danger">{{ form.contact.errors }}</small>
             </div>
             <div class="mb-3">
                 <button type="submit" class="btn btn-primary">Submit😁</button>
